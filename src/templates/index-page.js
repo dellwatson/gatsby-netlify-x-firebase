@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import axios from 'axios'
 
 export const IndexPageTemplate = ({
   image,
@@ -131,6 +132,13 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      <button 
+      onClick={() => {
+        axios.get('https://us-central1-stars-fn.cloudfunctions.net/helloTest')
+              .then(result => console.log(result))
+              .catch(e => console.log(e))
+      }}
+      className='button'>FETCH FIREBASE FUNCTION</button>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
