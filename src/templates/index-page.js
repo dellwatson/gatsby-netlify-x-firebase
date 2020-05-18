@@ -134,7 +134,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <button
         onClick={ () => {
-          axios.get('https://us-central1-stars-fn.cloudfunctions.net/helloTest', {
+          axios.get('https://us-central1-stars-fn.cloudfunctions.net/helloWorld', {
 
             headers: {
               "access-control-allow-origin": "*",
